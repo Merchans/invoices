@@ -29,7 +29,10 @@ go to http://127.0.0.1:8000
 
 ## How it work
 ### index
-![alt text](http://url/to/img.png)
+![homepage](https://raw.githubusercontent.com/Merchans/invoices/ea59dbf5925fcca1264f9612255668dfb59f4a40/public/images/index.png)
 ### create
+![homepage](https://raw.githubusercontent.com/Merchans/invoices/ea59dbf5925fcca1264f9612255668dfb59f4a40/public/images/create.png)
 ### show / print
+![homepage](https://raw.githubusercontent.com/Merchans/invoices/ea59dbf5925fcca1264f9612255668dfb59f4a40/public/images/invoice.png)
 ### edit
+![homepage](https://raw.githubusercontent.com/Merchans/invoices/ea59dbf5925fcca1264f9612255668dfb59f4a40/public/images/edit.png)
