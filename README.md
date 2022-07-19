@@ -26,3 +26,10 @@ go to http://127.0.0.1:8000
 ## Rules
 - For the bugs we use commit -m "fix: your fix message"
 - For the new functionality we use commit -m "feat: about new feat"
+
+## How it work
+### index
+![alt text](http://url/to/img.png)
+### create
+### show / print
+### edit
