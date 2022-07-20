@@ -42,15 +42,13 @@ class InvoiceController extends Controller
 
         $invoice = Invoice::create($request->all());
 
-        for ($i=0; $i < count($request->descriptions); $i++)
-        {
+        for ($i = 0; $i < count($request->descriptions); $i++) {
             $item = [
                 'description' => $request->descriptions[$i],
                 'quantity' => $request->quantities[$i],
                 'price' => $request->price_per_units[$i],
             ];
-            
-            
+
             $invoice->items()->create($item);
         }
 
@@ -71,7 +69,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($invoice);
 
         // dd($invoice->items);
-    
+
         return view('invoices.show', ['invoice' => $invoice]);
     }
 
@@ -86,7 +84,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($invoice);
 
         // $data = $invoice->only(['receiver', 'supplier', 'amount']);
-    
+
         return view('invoices.edit', ['data' => $invoice]);
     }
 
@@ -94,12 +92,37 @@ class InvoiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateInvoiceRequest  $request
-     * @param  \App\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateInvoiceRequest $request, Invoice $invoice)
+    public function update(UpdateInvoiceRequest $request)
     {
-        $selection = UpdateInvoiceRequest::find($request->id);
+        $invoice = Invoice::find($request->id);
+
+        
+
+        $invoice->update([
+            'receiver' => $request->receiver,
+            'supplier' => $request->supplier,
+            'issue_date' => $request->issue_date,
+            'terms' => $request->terms,
+        ]);
+
+        $invoice->items()->delete();
+
+        for ($i = 0; $i < count($request->descriptions); $i++) {
+            $items = [
+                'description' => $request->descriptions[$i],
+                'quantity' => $request->quantities[$i],
+                'price' => $request->price_per_units[$i],
+            ];
+            
+            $invoice->items()->create($items);
+        }
+
+        
+        
+
+        return back()->with('message', __('Invoice has been successfully updated'));;
     }
 
     /**

@@ -1,8 +1,9 @@
 <x-layout>
 
 
-<form class="p-8" method="POST" action="{{{route('invoice.store')}}}" name="create_invoice">
+<form class="p-8" method="POST" action="{{{route('invoice.update', ['id' => $data->id])}}}" name="create_invoice">
     @csrf
+    @method('PUT')
     <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
             <label for="receiver" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Receiver')}}</label>
