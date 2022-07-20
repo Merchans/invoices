@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+    .hidden-print {
+        display: none !important;
+    }
+}
+
+:disabled {
+    background: white;
+}

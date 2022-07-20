@@ -6,7 +6,6 @@
         <div>
             <label for="receiver" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Receiver')}}</label>
             <input type="text" minlength="8" maxlength="8" id="receiver" name="receiver" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IČO: 45274649" autofocus value="{{old('receiver')}}" onchange="get_receiver_ICO()">
-            <p id="status" class="text-green-500 text-xs mt-1"></p>
             @error('receiver')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
@@ -228,23 +227,5 @@
     </form>
 </div>
 
-<script>
-
-    let firstInvoiceItem = document.getElementById('invoice-item');
-    let template = firstInvoiceItem.cloneNode(true);
-
-    function addRow() {
-        let copy = template.cloneNode(true);
-
-        document.getElementById('invoice-items').appendChild(copy);
-        copy.getElementsByTagName("input")[0].focus();
-    }
-
-    function remove(el) {
-    let item = el.parentNode.parentNode;
-    console.log(item);
-    item.parentNode.removeChild(item);
-}
-</script>
 </x-layout>
 

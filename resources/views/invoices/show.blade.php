@@ -1,15 +1,4 @@
 <x-layout>
-    <style>
-        @media print {
-            .hidden-print {
-                display: none !important;
-            }
-        }
-
-        :disabled {
-            background: white;
-        }
-    </style>
     <section class="hidden-print max-w-5xl mx-auto bg-white py-4 px-4 w-full flex justify-end">
         <a href="#print"
             class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-1"

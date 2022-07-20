@@ -15,7 +15,7 @@
     </section>
     <x-flash-message />
     <script type="text/javascript" src="{{asset('js/getSubject.js')}}"></script>
-
+    <script type="text/javascript" src="{{asset('js/repeater.js')}}"></script>
 </body>
 
 </html>

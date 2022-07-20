@@ -4,13 +4,11 @@ const supplier = document.getElementById('supplier');
 function get_receiver_ICO() {
     const receiver = document.getElementById('receiver');
     
-    console.log(receiver.innerHTML);
     add_ico_script(receiver);
 }
 
 function get_supplier_ICO() {    
     const supplier = document.getElementById('supplier');
-    console.log(supplier);
     add_ico_script(supplier);
 }
 
@@ -88,9 +86,6 @@ function ico_back(data) {
             }
         }
     }
-
-
-    message('Načteno ' + data.name + '.')
 }
 
 
@@ -102,24 +97,7 @@ function sload(src) {
     
     s.type = 'text/javascript'; s.src = src; head.appendChild(s);
 
-
-
 }
 
-
-function message(msg, type = null) {
-    try {
-        document.getElementById('status').innerHTML = msg;
-        if (type){
-            document.getElementById("status").classList.add('text-red-500');
-            document.getElementById("status").classList.remove('text-green-500');
-        } else {
-            document.getElementById("status").classList.add('text-green-500');
-            document.getElementById("status").classList.remove('text-red-500');
-        }
-    } catch (e) {
-
-    }
-}
 get_receiver_ICO();
 get_supplier_ICO();
