@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CompanyExists;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +26,19 @@ class StoreInvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'receiver' => 'required|digits:8|numeric',
-            'supplier' => 'required|digits:8|numeric',
+            'receiver' => [
+                'required',
+                'digits:8',
+                'numeric',
+                'copamyexists'
+            ],
+            'supplier' => [
+                'required',
+                'digits:8',
+                'numeric',
+                'copamyexists'
+                
+            ],
             'descriptions' => 'required',
             'descriptions.*' => 'required',
             'quantities' => 'required',

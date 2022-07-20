@@ -5,14 +5,16 @@
     <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
             <label for="receiver" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Receiver')}}</label>
-            <input type="text" minlength="8" maxlength="8" id="receiver" name="receiver" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IČO: 45274649" autofocus value="{{old('receiver')}}" onchange="get_receiver_ICO()">
+            <input type="text" minlength="8" maxlength="8" id="receiver" name="receiver" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IČO: 45274649" autofocus value="{{old('receiver')}}">
+            {{-- onchange="get_receiver_ICO()" --}}
             @error('receiver')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
         </div>
         <div>
             <label for="supplier" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Supplier')}}</label>
-            <input type="text" minlength="8" maxlength="8" id="supplier" name="supplier" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IČO: 00177041"  value="{{old('supplier')}}" onchange="get_supplier_ICO()" >
+            <input type="text" minlength="8" maxlength="8" id="supplier" name="supplier" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IČO: 00177041"  value="{{old('supplier')}}" >
+            {{-- onchange="get_supplier_ICO()"  --}}
             @error('supplier')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror

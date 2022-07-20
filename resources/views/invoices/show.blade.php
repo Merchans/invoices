@@ -26,64 +26,31 @@
                                         {{ __('Invoice Detail') }}
                                     </p>
                                     <input type="text" id="receiver" name="receiver"
-                                        value="{{ $invoice->receiver }}">
+                                        value="{{ $invoice->receiver }}" disabled>
                                     <form name="receiver_form">
-                                        <div>
-                                            <input type="text" id="receiver_company" name="receiver_company"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
-                                        </div>
-
                                         <div>
                                             <input type="text" id="receiver_street" name="receiver_street"
                                                 class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
+                                                disabled value="{{ $receiver['company'] }}">
                                         </div>
 
                                         <div>
                                             <input type="text" id="receiver_village" name="receiver_village"
                                                 class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
+                                                disabled value="{{ $receiver['street'] }}">
                                         </div>
 
                                         <div>
                                             <input type="text" id="receiver_part_of_village"
                                                 name="receiver_part_of_village"
                                                 class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
+                                                disabled value="{{ $receiver['village'] }}">
                                         </div>
 
                                         <div>
                                             <input type="text" id="receiver_zipcode" name="receiver_zipcode"
                                                 class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
-                                        </div>
-
-                                        <div>
-                                            <input type="text" id="receiver_tax_id" name="receiver_tax_id"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
-                                        </div>
-
-                                        <div>
-                                            <input type="text" id="receiver_village_code"
-                                                name="receiver_village_code"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
-                                        </div>
-
-                                        <div>
-                                            <input type="text" id="receiver_district_code"
-                                                name="receiver_district_code"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
-                                        </div>
-
-                                        <div>
-                                            <input type="text" id="receiver_creation_date"
-                                                name="receiver_creation_date"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
+                                                disabled value="{{ $receiver['zip_code'] }}">
                                         </div>
 
                                     </form>
@@ -97,58 +64,25 @@
 
                                         <div>
                                             <input type="text" id="supplier_company" name="supplier_company"
-                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"disabled>
+                                                class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" disabled value="{{$supplier['company']}}">
                                         </div>
 
                                         <div>
                                             <input type="text" id="supplier_street" name="supplier_street"
                                                 class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                disabled>
+                                                disabled value="{{$supplier['street']}}">
 
                                             <div>
                                                 <input type="text" id="supplier_village" name="supplier_village"
                                                     class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
+                                                    disabled value="{{$supplier['village']}}">
                                             </div>
 
                                             <div>
                                                 <input type="text" id="supplier_part_of_village"
                                                     name="supplier_part_of_village"
                                                     class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
-                                            </div>
-
-                                            <div>
-                                                <input type="text" id="supplier_zipcode" name="supplier_zipcode"
-                                                    class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
-                                            </div>
-
-                                            <div>
-                                                <input type="text" id="supplier_tax_id" name="supplier_tax_id"
-                                                    class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
-                                            </div>
-
-                                            <div>
-                                                <input type="text" id="supplier_village_code"
-                                                    name="supplier_village_code"
-                                                    class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
-                                            </div>
-
-                                            <div>
-                                                <input type="text" id="supplier_district_code"
-                                                    name="supplier_district_code"
-                                                    class="dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
-                                            </div>
-
-                                            <div>
-                                                <input type="text" id="supplier_creation_date"
-                                                    name="supplier_creation_date"
-                                                    class=" dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    disabled>
+                                                    disabled value="{{$supplier['zip_code']}}">
                                             </div>
                                     </form>
                                 </div>

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\InvoiceController;
+use App\Models\SubjecInfo;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
     return redirect()->route('invoice.index');
+});
+
+
+Route::get('subjectinfo', function(Request $request){
+    
+    $ico = $request->get('ico');
+
+    return json_encode(SubjecInfo::getCompanyInfo($ico));
 });
 
 Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\Invoice;
+use App\Models\SubjecInfo;
 
 class InvoiceController extends Controller
 {
@@ -68,9 +69,10 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::find($invoice);
 
-        // dd($invoice->items);
+        $supplier = SubjecInfo::getCompanyInfo($invoice->supplier);
+        $receiver = SubjecInfo::getCompanyInfo($invoice->receiver);
 
-        return view('invoices.show', ['invoice' => $invoice]);
+        return view('invoices.show', ['invoice' => $invoice, 'receiver' => $receiver, 'supplier' => $supplier ]);
     }
 
     /**
