@@ -66,3 +66,17 @@ go to http://127.0.0.1:8000
 
 - **The system requires:**
     - click to "Update invoice"
+
+
+### Procedure at work:
+1. install framework Laravel
+2. installing the package for UI
+3. create routs
+4. create controllers
+5. create models
+6. create blade files
+7. create a CRUD on the invoice model
+8. manage the relationship between an invoice and its items
+9. devise a way in which data can be retrieved from a public source
+10. insert data from an external source into a blad designed for printing invoices and forms for editing and creating invoices
+
